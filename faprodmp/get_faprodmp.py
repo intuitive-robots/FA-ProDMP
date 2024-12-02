@@ -5,7 +5,7 @@ import torch
 import numpy as np
 from copy import deepcopy
 
-from utils import cholesky
+from .utils import cholesky
 
 from mp_pytorch.mp import MPFactory
 from mp_pytorch.mp import ProDMP
@@ -26,7 +26,7 @@ ALPHA_PHASE = 2
 ####################################################################################################
 
 
-def get_FAPoDMP(trajectories: typing.List[pd.DataFrame],
+def get_faprodmp(trajectories: typing.List[pd.DataFrame],
              pos_features: typing.List[str],
              force_features: typing.List[str],
              num_basis:int,
@@ -52,9 +52,10 @@ def get_FAPoDMP(trajectories: typing.List[pd.DataFrame],
     mp_config["num_dof"] = len(pos_features) + len(force_features)
     mp_config["tau"] = TAU
     mp_config["dtype"] = DTYPE
-    mp_config["mp_args"]["dt"] = DT
     mp_config["learn_tau"] = LEARN_TAU
     mp_config["learn_delay"] = LEARN_DELAY
+    mp_config["mp_args"] = dict()
+    mp_config["mp_args"]["dt"] = DT
     mp_config["mp_args"]["num_basis"] = num_basis
     mp_config["mp_args"]["basis_bandwidth_factor"] = BASIS_BANDWIDTH_FACTOR
     mp_config["mp_args"]["num_basis_outside"] = NUM_BASIS_OUTSIDE
