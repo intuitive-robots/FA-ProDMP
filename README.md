@@ -27,7 +27,7 @@ This utility depends on the following packages:
 - MP_PyTorch (preferably using the submodule provided)
     - matplotlib
 
-It should be used with Python 3.9.0.
+We recommend usage of Python 3.9.0.
 A conda configuration is provided in `conda_env.yml`.
 
 ## Citation

@@ -26,7 +26,7 @@ ALPHA_PHASE = 2
 ####################################################################################################
 
 
-def get_faprodmp(trajectories: typing.List[pd.DataFrame],
+def fit_faprodmp(trajectories: typing.List[pd.DataFrame],
              pos_features: typing.List[str],
              force_features: typing.List[str],
              num_basis:int,
