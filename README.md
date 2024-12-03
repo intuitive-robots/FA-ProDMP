@@ -6,11 +6,13 @@ It provides the following 3 commands:
 - `blend_trajectories` to blend between 2 trajectories
 
 ## Getting Started
+Ensure that all submodules are initialized:
+```bash
+git submodule update --init
+```
 [Install Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) and run the following command:
 ```bash
 conda env create -n <env_name> -f conda_env.yml
-eval "$(conda shell.bash hook)"
-conda activate <env_name>
 ```
 After this, you can run the demonstration notebook in the `demo` folder.
 
